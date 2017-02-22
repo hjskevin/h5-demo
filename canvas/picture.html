@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>脉冲</title>
+    <style>
+        .pic {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .pic:hover {
+            animation: pulse 1s .2s ease both;
+            -webkit-animation: pulse 1s .2s ease both;
+            -moz-animation: pulse 1s .2s ease both;
+        }
+        
+        @keyframes pulse {
+            0% {
+                -webkit-transform: scale(1)
+            }
+            50% {
+                -webkit-transform: scale(1.1)
+            }
+            100% {
+                -webkit-transform: scale(1)
+            }
+        }
+        
+        @-webkit-keyframes pulse {
+            0% {
+                -webkit-transform: scale(1)
+            }
+            50% {
+                -webkit-transform: scale(1.1)
+            }
+            100% {
+                -webkit-transform: scale(1)
+            }
+        }
+        
+        @-moz-keyframes pulse {
+            0% {
+                -moz-transform: scale(1)
+            }
+            50% {
+                -moz-transform: scale(1.1)
+            }
+            100% {
+                -moz-transform: scale(1)
+            }
+        }
+        
+        img {
+            width: 100%;
+            height: 100%；
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pic">
+        <img src="../img/org_20170117125731_196.jpg" />
+    </div>
+</body>
+
+</html>
