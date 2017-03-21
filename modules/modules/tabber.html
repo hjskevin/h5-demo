@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>tab切换</title>
+		<!--简单设置下样式-->
+		<style type="text/css">
+			body{font-family:"helvetica Neue";,sans-serif;color:#666;}
+			#tab-container{background:#fff;width:400px;box-shadow:1px 1px 2px rgba(0,0,0,.15);}
+			#tab-nav{background:#1abc9c;margin:0;padding:0;}
+			#tab-nav li{display:inline-block;list-style:none;width:100px;height: 50px;line-height: 50px;text-align: center;}
+			#tab-nav li a{display: block;color: #fff;text-decoration: none;}
+			#tab-content{padding:25px;}
+			#tab-nav li a.active{color:#1abc9c;background: #fff;}
+		</style>
+	</head>
+	<body>
+		<section id="tab-container">
+			<ul id="tab-nav">
+				<li><a href="#weather" id="nav-weather" >weather</a></li>
+				<li><a href="#sport" id="nav-sport" >sport</a></li>
+				<li><a href="#travel" id="nav-travel" >travel</a></li>
+			</ul>
+			<div id="tab-content">
+				<article id="weather">
+					<p>content1</p>
+				</article>
+				<article id="sport">
+					<p>content2</p>
+				</article>
+				<article id="travel">
+					<p>content3</p>
+				</article>
+			</div>
+		</section>
+		<script type="text/javascript">
+			var nav_weather=document.getElementById("nav-weather");
+			var nav_sport=document.getElementById("nav-sport");
+			var nav_travel=document.getElementById("nav-travel");
+			var weather=document.getElementById("weather");
+			var sport=document.getElementById("sport");
+			var travel=document.getElementById("travel");
+			sport.style.display="none";
+			travel.style.display="none";
+			nav_weather.className="active";
+			function hideAll(){
+				weather.style.display="none";
+				sport.style.display="none";
+				travel.style.display="none";
+				nav_weather.className="";
+				nav_sport.className="";
+				nav_travel.className="";
+			}
+			nav_weather.onclick=function(){
+				hideAll();
+				weather.style.display="block";
+				nav_weather.className="active";
+			}
+			nav_sport.onclick=function(){
+				hideAll();
+				sport.style.display="block";
+				nav_sport.className="active";
+			}
+			nav_travel.onclick=function(){
+				hideAll();
+				travel.style.display="block";
+				nav_travel.className="active";
+			}
+			
+		</script>
+	</body>
+</html>
