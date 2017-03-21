@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>弹出图层</title>
+		<!--老样子设置下样式-->
+		<style type="text/css">
+			#popup{
+				position:fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				transition:all .5s;
+				-webkit-transition:all .5s;
+				visibility: hidden;
+				opacity: 0;
+			}
+			#popup.show{opacity: 1;visibility: visible;}
+			#popup-content{
+				position:absolute;
+				width:700px;
+				height:400px;
+				box-sizing:border-box;
+				left:50%;
+				top: 50%;
+				margin-left: -350px;
+				margin-top:-200px;
+				padding:30px 50px;
+				background:#fff;
+				box-shadow:0 10px 15px rgba(0,0,0,.2);
+				text-align: center;
+				z-index: 200;
+				transition:all .5s;
+				-webkit-transition:all .5s;
+				transform:translateY(100px);
+				-webkit-transform: translateY(100px);
+			}
+			#popup-content.show{transform:translateY(0);-webkit-transform: translateY(0);}
+			#popup-content h1{
+				color:#555;padding-bottom:20px;border-bottom:1px solid #ddd;
+			}
+			#popup-content p{
+				color:#888;font-size:21px;
+			}
+			#popup-content button{color: #fff;background:#e74c3c;border: 0;font-size:21px;padding:10px 15px;}
+			#popup-content button:hover{background:#c03928;}
+			#popup-bg{position: absolute;z-index: 100;width:100%;height:100%;background:rgba(0,0,0,.3);}
+		</style>
+	</head>
+	<body>
+		<!--一些没用的内容可以忽略，为了实现效果-->
+		<div class="content">据CNN报道，在被枪手扫射的人群中，一名幸存者因背包中的一台MacBook电脑为其“挡弹”而幸运地毫发无损。
+
+当地时间1月6日下午1时多，美国佛罗里达州劳德代尔堡机场2号航站楼的行李提取区发生枪击事件。目击者称，枪手进入行李提取区后，从随身包中掏出枪，向等待提取行李的人群射击。过程中，枪手未发一言。随后警方证实，枪手是在射完所有子弹后向警方投降的。警方从其身上搜出的一份美军人员证件显示，枪手为26岁的男子艾斯特班·圣地亚哥（Esteban Santiago）。
+
+据央视网消息，美国联邦调查局随后在枪击事件事发机场举行了新闻发布会。发布会上，美国联邦调查局人员称，枪击案的调查工作正在加紧进行。枪手的行凶动机仍不明确，并确认枪手曾前往联邦调查局办公室。据英国《卫报》报道，枪手是一名曾前往伊拉克的老兵。而美国有线电视新闻网（CNN）报道称，枪手几个月前曾前往美国联邦调查局的办公室。他在接受问询时称，自己有幻听，他还接受过心理治疗。
+
+令据CNN报道，在被枪手扫射的人群中，一名幸存者因背包中的一台MacBook笔记本电脑为其“挡弹”，幸运地毫发无损。
+<a href="javascript:void(0);">点击这里</a>
+“背包救了我的命。”幸运儿史蒂夫（Steve Frappie）向CNN诉说事发时的情景，“我倒在了地上，当时背包还在我的背上，当枪手向我所在的方向射击时，我就以这样一种形式缩在机场某处，（然后）一颗子弹弹了出去。”史蒂夫表示，当时他就像“一只受到（背包）庇护的乌龟”。
+
+“我觉得有什么东西撞到了我的背上。”史蒂夫继续说道，“随后我到洗手间自己检查身体时发现了我的笔记本电脑上的破损，我把背包交给了联邦调查局（FBI），他们在我背包的口袋里找到了一枚子弹。”
+
+“（如果没有背包和电脑，）子弹穿过的可能就是我的后背。”史蒂夫心有余悸地说道，<a href="javascript:void(0);">点击这里</a>他在下飞机前，曾急急忙忙地将笔记本电脑塞到背包里，甚至来不及将电脑关机。
+
+而另一名目击者，马克·利亚（Mark Lea）向CNN透露了事发时的更多细节，他表示，枪手的扫射持续了约45秒，随后他放下（枪），一言不发地等待着被警方带走。史蒂夫则表示，当时有一个人“救了我们很多人的命”，袭击发生时，他警告后来者称，枪手可能仍在开火。</div>
+	<!--modal-->
+	<div id="popup" class="">
+		<div id="popup-content">
+			<h1>this is a pop-up window</h1>
+			<p>zhang xiahgrong xiahgongahonghosjosjfshgosjhoghojoghoj收手机阿红就是世界首所是设计师前端开发xiahgongahonghosjosjfshgosjhoghojoghoj收手机阿红就是世界首所是
+				设计师前端开发xiahgongahonghosj发xiahgongahonghosjosjfshgosjhoghojoghoj收手机阿红就
+				xiahgongahonghosjosjfshgosjhoghojoghoj收手机阿红就是世界首所是开发</p>
+			<button id="close">关闭我</button>
+		</div>
+		<div id="popup-bg"></div>
+	</div>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("a,#close,#popup-bg").click(function(e){
+				e.preventDefault();//阻止默认的单击事件
+				$("#popup").toggleClass("show");
+				$("#popup-content").toggleClass("show");
+			});
+		});
+	</script>
+	</body>
+</html>
