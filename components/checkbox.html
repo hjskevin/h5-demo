@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>自定义单选框</title>
+    <style type="text/css">
+        input[type="checkbox"]+label::before {
+            content: "\a0";
+            display: inline-block;
+            vertical-align: .2em;
+            width: .8em;
+            height: .8em;
+            margin-right: .2em;
+            border-radius: .2em;
+            background: silver;
+            text-indent: .15em;
+            line-height: .65;
+        }
+        
+        input[type="checkbox"]:checked+label::before {
+            content: "\2713";
+            background: yellowgreen;
+        }
+        
+        input[type="checkbox"] {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+        }
+        
+        input[type="checkbox"]:focus+label::before {
+            box-shadow: 0 0 .1em .1em #58a;
+        }
+        
+        input[type="checkbox"]:disabled+label::before {
+            background: gray;
+            box-shadow: none;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="" value="" id="awesome">
+    <label for="awesome">自定义单选框</label>
+</body>
+
+</html>
