@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>loading加载动画</title>
+    <style type="text/css">
+        .loadingTip {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate3d(-50%, -50%, 0);
+            z-index: 10001;
+        }
+        
+        .loadingTip div {
+            background-color: #000;
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            margin: 2px;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            position: absolute;
+        }
+        
+        @-webkit-keyframes loading {
+            50% {
+                opacity: 0.3;
+                -webkit-tranform: scale(0.4);
+                transform: scale(0.4);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+        
+        .loadingTip>div:nth-child(1) {
+            top: 25px;
+            left: 0;
+            -webkit-animation: loading 1s 0s infinite linear;
+            animation: loading 1s 0s infinite linear;
+        }
+        
+        .loadingTip>div:nth-child(2) {
+            top: 17.04545px;
+            left: 17.04545px;
+            -webkit-animation: loading 1s 0.12s infinite linear;
+            animation: loading 1s 0.12s infinite linear;
+        }
+        
+        .loadingTip>div:nth-child(3) {
+            top: 0;
+            left: 25px;
+            -webkit-animation: loading 1s 0.24s infinite linear;
+            animation: loading 1s 0.24s infinite linear;
+        }
+        
+        .loadingTip>div:nth-child(4) {
+            top: -17.04545px;
+            left: -17.04545px;
+            -webkit-animation: loading 1s .36s infinite linear;
+            animation: loading 1s .36s infinite linear;
+        }
+        
+        .loadingTip>div:nth-child(5) {
+            top: -25px;
+            left: 0;
+            -webkit-animation: loading 1s .48s infinite linear;
+            animation: loading 1s .48s infinite linear;
+        }
+        
+        .loadingTip>div:nth-child(6) {
+            top: -17.04545px;
+            left: -17.04545px;
+            -webkit-animation: loading 1s .6s infinite linear;
+            animation: loading 1s .6s infinite linear;
+        }
+        
+        .loadingTip>div:nth-child(7) {
+            top: 0;
+            left: -25px;
+            -webkit-animation: loading 1s .72s infinite linear;
+            animation: loading 1s .72s infinite linear;
+        }
+        
+        .loadingTip>div:nth-child(8) {
+            top: 17.04545px;
+            left: -17.04545px;
+            -webkit-animation: loading 1s .84s infinite linear;
+            animation: loading 1s .84s infinite linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loadingTip">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>
