@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>弹跳动画效果</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body{display: flex;justify-content: space-between;width:800px;height: 800px;}
+      @keyframes bounce{
+        60%,80%,to{transform: translateY(350px);}
+        70%{transform:translateY(250px);}
+        90%{transform: translateY(300px);}
+      }
+      @keyframes bounce1{
+        60%,80%,to{transform: translateY(400px); animation-timing-function: ease-out;}
+        70%{transform: translateY(300px);}
+        90%{transform:translateY(360px); }
+      }
+      @keyframes bounce2{
+        60%,80%,to{transform: translateY(400px);animation-timing-function: ease;}
+        70%{transform: translateY(300px);}
+        90%{transform: translateY(360px);}
+      }
+      /*球一*/
+      .cont{width: 100px;height: 440px;background-color:burlywood;}
+      .ball{width: 80px;height: 80px;border-radius: 50%;background-color: red;margin: auto;animation: bounce 3s; }
+      .bottom{width:100px;height: 20px;background-color: green;}
+
+      /*球二*/
+      .cont1{width: 100px;height: 440px;background-color:burlywood;}
+      .ball1{width: 80px;height: 80px;border-radius: 50%;background-color: red;margin: auto;animation: bounce1 3s ease-in; }
+      .bottom1{width:100px;height: 20px;background-color: green;}
+
+      /*球三*/
+      .cont2{width: 100px;height: 440px;background-color:burlywood;}
+      .ball2{width: 80px;height: 80px;border-radius: 50%;background-color: red;margin: auto;animation: bounce1 3s cubic-bezier(.1,.25,1,.25); }
+      .bottom2{width:100px;height: 20px;background-color: green;}
+    </style>
+  </head>
+  <body>
+    <div>
+       <div class="cont">
+        <div class="ball">
+        </div>
+         
+      </div>
+      <div class="bottom">
+      </div> 
+    </div>
+     <!--球一 end-->
+    <div>
+      <div class="cont1">
+        <div class="ball1">
+        </div>
+      </div>
+      <div class="bottom1">
+      </div>
+    </div>
+    <!--球二 end-->
+     <div>
+      <div class="cont2">
+        <div class="ball2">
+        </div>
+      </div>
+      <div class="bottom2">
+      </div>
+    </div>
+    <!--球三 end-->
+  </body>
+</html>
