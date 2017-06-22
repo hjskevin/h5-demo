@@ -8,14 +8,11 @@
 # 项目布局
 
 ```
-.
-├──	canvas                                     // canvas动画效果
-├── components                                 // 通用组件
-├── css3                                       // css3效果
+├── canvas&animations                          // canvas和动画效果
+├── components                                 // web通用组件
 ├── form                                       // 表单
 ├── games                                      // 游戏demo
 ├── img                                        //图片
 ├── vendor                                     //插件
-.
 
 ```
