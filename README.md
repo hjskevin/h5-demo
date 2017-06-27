@@ -13,6 +13,6 @@
 ├── form                                       // 表单
 ├── games                                      // 游戏demo
 ├── img                                        //图片
-├── vendor                                     //插件
+├── vendor                                     //插件 
 
 ```
