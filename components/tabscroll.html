@@ -1,0 +1,100 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--通用 meta-->
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection"> 	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>模仿今日头条顶部导航栏效果</title>
+	<link rel="stylesheet" type="text/css" href="../vendor/swiper-3.4.2.min.css">
+	<script type="text/javascript" src="../vendor/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="../vendor/swiper.min.js"></script>
+	<style type="text/css" media="screen">
+		*{margin:0;padding: 0;}
+		#tabNav{width:100%; overflow:hidden;border-bottom: 1px solid #f8f8f8;}
+		#tabNav .swiper-slide{padding: 0 5px; letter-spacing:2px; width:3rem;text-align: center;}
+		#tabNnav .swiper-slide span{transition: all .3s ease;display: block;}
+		#tabNav .active span{transform:scale(1.1);color:#ff2d2d;}
+	</style>
+</head>
+<body>
+	<div id="tabNav" class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide active"><span>推荐</span></div>
+			<div class="swiper-slide "><span>热点</span></div>
+			<div class="swiper-slide "><span>深圳</span></div>
+			<div class="swiper-slide "><span>视频</span></div>
+			<div class="swiper-slide "><span>社会</span></div>
+			<div class="swiper-slide "><span>娱乐</span></div>
+			<div class="swiper-slide "><span>科技</span></div>
+			<div class="swiper-slide "><span>问答</span></div>
+			<div class="swiper-slide "><span>汽车</span></div>
+			<div class="swiper-slide "><span>财经</span></div>
+			<div class="swiper-slide "><span>军事</span></div>
+			<div class="swiper-slide "><span>体育</span></div>
+			<div class="swiper-slide "><span>美女</span></div>
+			<div class="swiper-slide "><span>段子</span></div>
+			<div class="swiper-slide "><span>国际</span></div>
+			<div class="swiper-slide "><span>趣图</span></div>
+			<div class="swiper-slide "><span>健康</span></div>
+			<div class="swiper-slide "><span>特产</span></div>
+			<div class="swiper-slide "><span>房产</span></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('#topNav', {
+			freeMode: true,
+			freeModeMomentumRatio: 0.5,
+			slidesPerView: 'auto',
+
+		});
+
+swiperWidth = mySwiper.container[0].clientWidth
+maxTranslate = mySwiper.maxTranslate();
+maxWidth = -maxTranslate + swiperWidth / 2
+
+$(".swiper-container").on('touchstart', function(e) {
+	e.preventDefault()
+})
+
+mySwiper.on('tap', function(swiper, e) {
+
+//	e.preventDefault()
+
+	slide = swiper.slides[swiper.clickedIndex]
+	slideLeft = slide.offsetLeft
+	slideWidth = slide.clientWidth
+	slideCenter = slideLeft + slideWidth / 2
+	// 被点击slide的中心点
+
+	mySwiper.setWrapperTransition(300)
+
+	if (slideCenter < swiperWidth / 2) {
+		
+		mySwiper.setWrapperTranslate(0)
+
+	} else if (slideCenter > maxWidth) {
+		
+		mySwiper.setWrapperTranslate(maxTranslate)
+
+	} else {
+
+		nowTlanslate = slideCenter - swiperWidth / 2
+
+		mySwiper.setWrapperTranslate(-nowTlanslate)
+
+	}
+
+	$("#topNav  .active").removeClass('active')
+
+	$("#topNav .swiper-slide").eq(swiper.clickedIndex).addClass('active')
+
+})
+</script>
+</body>
+</html>
