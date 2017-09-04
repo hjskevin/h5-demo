@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>超出部分显示省略号</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .page-cont{width: 100px;height: 20px;overflow: hidden;zoom:1;}
+      .cont{float:left;height:20px;margin-right: 20px;overflow: hidden;}
+      .icon{width:20px;height: 20px;float: right;margin-top:-20px;}
+    </style>
+  </head>
+  <body>
+    <div>这是一段文字，我们来测试一下，多余的部分有没有被省略号代替</div>
+    <div class="page-cont">
+      <div class="cont">这是一段文字，我们来测试一下，多余的部分有没有被省略号代替</div>
+      <div class="icon">...</div>
+    </div>
+  </body>
+</html>
