@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>indexDB</title>
+    <style>
+        input, textarea {
+        padding: 8px 10px;
+        font-size: 100%;
+        font-family: inherit;
+        max-width: calc(100% - 8em);
+    }
+    textarea {
+        vertical-align: top;
+        width: 20em;
+    }
+    input[type="submit"] {
+        margin-left: 5em;
+    }
+    .result {
+        margin-top: 60px;
+        max-width: 600px;
+        border: 1px solid #ddd;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    th, td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+    }
+    th {
+        background-color: #f5f5f5;
+        text-align: left;
+    }
+    .status {
+        line-height: 100px;
+        text-align: center;
+        color: gray;
+    }
+    .error {
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <p>项目名称：<input  name="name" autocomplete="off" required></p>
+        <p>开始时间：<input type="date" value="2017-07-16" name="begin" required></p>
+        <p>预计结束：<input type="date" value="2019-07-16" name="end" required></p>
+        <p>参与人员：<input name="person" placeholder="多人空格分隔" required autocomplete="off"></p>
+        <p>补充说明：<textarea rows="5" placeholder="非必填" name="remark"></textarea></p>
+        <p><input type="submit" value="确定创建"></p>
+    </form>
+    <div id="result" class="result">
+        <table>
+            <thead>
+                <tr>
+                    <th>项目名称</th>
+                    <th>开始时间</th>
+                    <th>结束时间</th>
+                    <th>参与人员</th>
+                    <th>补充说明</th>
+                    <th width="30">操作</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="status" class="status">加载中...</div>
+    </div>
+    <script id="tplist" type="text/template">
+        <tr>
+            <td data-key="name" data-id="$id$" contenteditable="$plaintext-only$">$name$</td>
+            <td data-key="begin" data-id="$id$" contenteditable="$plaintext-only$">$begin$</td>
+            <td data-key="end" data-id="$id$" contenteditable="$plaintext-only$">$end$</td>
+            <td data-key="person" data-id="$id$" contenteditable="$plaintext-only$">$person$</td>
+            <td data-key="remark" data-id="$id$" contenteditable="$plaintext-only$">$remark$</td>
+            <td><a href="javascript:;" role="button" class="jsListDel" data-id="$id$">删除</a></td>
+        </tr>
+    </script>
+    <script type="text/javascript" src="indexDB.js"></script>
+</body>
+</html>
