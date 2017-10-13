@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js循环轮播图</title>
+    <style>
+        .container{
+            width: 1068px;
+            height: 400px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .container .img{
+            display: inline-block;
+            position: absolute;
+            transition: all 1s;
+            background-size: cover;
+        }
+        .container .img:after{
+            content: "";
+            text-align: center;
+            position: absolute;
+            bottom: -80px;
+            height: 1px;
+            width: 94%;
+            margin: auto 3%;
+            box-shadow: 0 0 20px 15px rgba(0, 0, 0, 1);
+            opacity: 0.05;
+            background-color: #000;
+        }
+        .img:nth-of-type(1){
+            background-image: url(../img/1.jpg);
+        }
+        .img:nth-of-type(2){
+            background-image: url(../img/2.jpg);
+        }
+        .img:nth-of-type(3){
+            background-image: url(../img/3.jpg);
+        }
+        .img:nth-of-type(4){
+            background-image: url(../img/4.jpg);
+        }
+        #btnLeft{
+            cursor: pointer;
+            width: 234px;
+            height: 400px;
+            position: absolute;
+            z-index: 10;
+            background-color: rgba(223, 80, 0, 0)
+        }
+        #btnRight{
+            cursor: pointer;
+            width: 234px;
+            height: 400px;
+            position: absolute;
+            z-index: 10;
+            background-color: rgba(223, 80, 0, 0)
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span id="btnLeft"></span>
+        <span id="btnRight"></span>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+    </div>
+    <script>
+        var img=document.getElementsByClassName("img");
+        var num=40000;
+        function setImg(){
+            var numA=num%4;
+            var numB=(num+1)%4;
+            var numC=(num+2)%4;
+            var numD=(num+3)%4;
+            img[numA].style.width=600+"px";
+            img[numA].style.height=400+"px";
+            img[numA].style.backgroundColor="#808080";
+            img[numA].style.zIndex=4;
+            img[numA].style.left=234+"px";
+            img[numA].style.top=0;
+            img[numA].style.opacity=1;
+
+            img[numB].style.width=468+"px";
+            img[numB].style.height=312+"px";
+            img[numB].style.backgroundColor="#666";
+            img[numB].style.zInde=1;
+            img[numB].style.left=0;
+            img[numB].style.top=44+"px";
+            img[numB].style.opacity=0.6;
+
+            img[numC].style.width=351+"px";
+            img[numC].style.height=234+"px";
+            img[numC].style.backgroundColor="#666";
+            img[numC].style.zInde=0;
+            img[numC].style.left=534+"px";
+            img[numC].style.top=83+"px";
+            img[numC].style.opacity=0;
+
+            img[numD].style.width=468+"px";
+            img[numD].style.height=312+"px";
+            img[numD].style.backgroundColor="#666";
+            img[numD].style.zInde=1;
+            img[numD].style.left=600+"px";
+            img[numD].style.top=44+"px";
+            img[numD].style.opacity=0.6;
+        }
+        setImg();
+
+        window.setInterval(function(){
+            num++;
+            setImg();
+        },4000);
+
+        document.getElementById("btnLeft").onclick=function(){
+            num++;
+            setImg();
+        }
+
+        document.getElementById("btnRight").onclick=function(){
+            num--;
+            setImg();
+        }
+
+    </script>
+</body>
+</html>

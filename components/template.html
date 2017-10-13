@@ -4,9 +4,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>js模板引擎</title>
+	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap-3.3.7/dist/css/bootstrap.min.css">
 </head>
 <body>
-	<table>
+	<table class="table table-bordered">
 		<thead>
 			<tr>
 				<th>编号</th>
@@ -21,10 +22,15 @@
 	<script type="text/javascript" src="../vendor/jquery-2.1.0.js"></script>
 	<script  type="text/javascript" charset="utf-8" src="../vendor/art-template.min.js" ></script>
 	<script type="text/template" id="list">
-		{{each suggests as value i}}
+		{{each suggests as value index}}
 			<tr>
 				<td>{{value.id}}</td>
-				<td>{{value.name}}</td>
+				{{if value.state=="1"}}
+					<td>{{value.name}}</td>
+				{{/if}};
+				{{if value.state=="2"}}
+					<td>{{value.remark}}</td>
+				{{/if}};
 				<td>{{value.sex}}</td>
 				<td>{{value.time}}</td>
 				<td>{{value.remark}}</td>
@@ -36,9 +42,9 @@
 			$.get("../list.json",function(res){
 				if(res.result===0){
 					if(res.data!=null){
-						for(let i=0;i<res.data.length;i++){
+						for(let i=0;i<res.data.suggests.length;i++){
 							var $html=template("list",res.data);
-							$("#list").html($html);
+							$("#list-cont").html($html);
 						}
 					}
 				}
