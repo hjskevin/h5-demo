@@ -8,11 +8,53 @@
 # 项目布局
 
 ```
-├── canvas&animations                          // canvas和动画效果
-├── components                                 // web通用组件
-├── form                                       // 表单
-├── games                                      // 游戏demo
-├── img                                        //图片
-├── vendor                                     //插件 
+.
+├── README.md
+├── animations                             //动画效果demo
+│   ├── animate.html
+│   ├── bounce.html
+│   ├── boxshowed.html
+│   ├── canvas.html
+│   ├── elasticity.html
+│   └── picture.html
+├── components                             //web上常用的组件
+│   ├── background.html
+│   ├── checkbox.html
+│   ├── fold.html
+│   ├── loading.html
+│   ├── modal.html
+│   ├── more.html
+│   ├── scroll.html
+│   ├── suspension.html
+│   ├── swiperscroll.html
+│   ├── tabber.html
+│   ├── tabscroll.html
+│   ├── template.html
+│   └── trapezoid.html
+├── css3                                   //css3实现的效果demo
+│   └── center.html
+├── form
+│   ├── form.html
+│   ├── indexDB.html
+│   └── indexDB.js
+├── static                                //静态资源(图片等)
+│   ├── 1.jpg
+│   ├── 1206288.jpg
+│   ├── 2.jpg
+│   ├── 3.jpg
+│   ├── 4.jpg
+│   ├── imgs
+│   └── org_20170117125731_196.jpg
+└── vendor                                //第三方插件
+    ├── art-template.min.js
+    ├── bootstrap-3.3.7
+    ├── date
+    ├── jedate
+    ├── jquery-2.1.0.js
+    ├── swiper-3.4.2.min.css
+    ├── swiper-3.4.2.min.js
+    └── swiper.min.js
+
+10 directories, 35 files
 
 ```
