@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>两栏布局</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .outer {
+      height: 100px;
+      margin-bottom: 10px;
+    }
+
+    .left {
+      background: red;
+      height: 100px;
+    }
+
+    .right {
+      background: blue;
+      height: 100px;
+    }
+
+    /* 浮动方法 */
+    .outer1 .left {
+      width: 200px;
+      float: left;
+    }
+
+    .outer1 .right {
+      width: auto;
+      margin-left: 200px;
+    }
+
+    /* flex 方法 */
+    .outer2 {
+      display: flex;
+    }
+
+    .outer2 .left {
+      /* 定义项目的放大比列 */
+      flex-grow: 0;
+      /* 定义项目的缩小比列 */
+      flex-shrink: 0;
+      /* 项目占据固定空间 */
+      flex-basis: 200px;
+    }
+
+    .outer2 .right {
+      flex: auto;
+    }
+
+    /* position 方法 */
+    .outer3 {
+      position: relative;
+    }
+
+    .outer3 .left {
+      position: absolute;
+      width: 200px;
+    }
+
+    .outer3 .right {
+      margin-left: 200px;
+    }
+
+    /* position 方法二 */
+    .outer4 {
+      position: relative;
+    }
+
+    .outer4 .left {
+      width: 200px;
+    }
+
+    .outer4 .right {
+      position: absolute;
+      top: 0;
+      left: 200px;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer outer1">
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+  <div class="outer outer2">
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+  <div class="outer outer3">
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+  <div class="outer outer4">
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+</body>
+
+</html>
