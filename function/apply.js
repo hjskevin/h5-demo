@@ -1,3 +1,4 @@
+// 手写实现apply函数
 Function.prototype.apply2 = function(context, arr) {
   var context = context || window;
   context.fn = this;
@@ -10,4 +11,4 @@ Function.prototype.apply2 = function(context, arr) {
   var result = eval("context.fn(" + args + ")");
   delete context.fn;
   return result;
-}   
+}

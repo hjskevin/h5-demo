@@ -1,3 +1,5 @@
+
+// 手写实现call函数
 Function.prototype.call2 = function(context) {
   var context = context || window;
   context.fn = this;
