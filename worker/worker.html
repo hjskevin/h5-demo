@@ -18,7 +18,7 @@
     //   }
     //   console.log(fibonacci(38));
     var worker=new Worker('worker.js');
-    worker.postMessage(36);
+    worker.postMessage(40);
     worker.onmessage=function(event){
         var data=event.data;
         console.log(data)
